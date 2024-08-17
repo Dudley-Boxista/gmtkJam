@@ -18,6 +18,8 @@ animations = [{
 height = 38.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_0s8t1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -26,5 +28,6 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_bmwd2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 3
 position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_gsol0")
