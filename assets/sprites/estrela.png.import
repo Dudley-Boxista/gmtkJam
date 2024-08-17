@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://187p160x682y"
-path="res://.godot/imported/png-clipart-pixelated-yellow-star-minecraft-super-mario-bros-pixel-art-pixel-art-text-super-mario-bros-thumbnail.png-78537e5f63d919805652687d1a9d5272.ctex"
+path="res://.godot/imported/estrela.png-848449cfba5dc5123e15a51fac12ae10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/png-clipart-pixelated-yellow-star-minecraft-super-mario-bros-pixel-art-pixel-art-text-super-mario-bros-thumbnail.png"
-dest_files=["res://.godot/imported/png-clipart-pixelated-yellow-star-minecraft-super-mario-bros-pixel-art-pixel-art-text-super-mario-bros-thumbnail.png-78537e5f63d919805652687d1a9d5272.ctex"]
+source_file="res://assets/sprites/estrela.png"
+dest_files=["res://.godot/imported/estrela.png-848449cfba5dc5123e15a51fac12ae10.ctex"]
 
 [params]
 
