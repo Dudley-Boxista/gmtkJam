@@ -1,34 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1pkqrigf6r0"]
+[gd_scene load_steps=5 format=3 uid="uid://d1pkqrigf6r0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0s8t1"]
-[ext_resource type="Texture2D" uid="uid://boob823iq3y1m" path="res://assets/sprites/pipoca.png" id="1_kti0a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pes46"]
-atlas = ExtResource("1_kti0a")
-region = Rect2(0, 0, 591, 534)
+[ext_resource type="Texture2D" uid="uid://c8jow04ql7y16" path="res://assets/sprites/milho.png" id="2_h4ddu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmwd2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pes46")
+"texture": ExtResource("2_h4ddu")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o7ty4"]
-radius = 42.0476
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gsol0"]
+height = 38.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_0s8t1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.76837e-07, 1)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_bmwd2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 5)
-shape = SubResource("CircleShape2D_o7ty4")
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_gsol0")
