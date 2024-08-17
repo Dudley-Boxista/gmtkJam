@@ -8,4 +8,5 @@ func _on_body_entered(body):
 
 
 func _on_timer_timeout():
-	pass # Replace with function body.
+	print("TIMER!!!")
+	get_tree().reload_current_scene()
