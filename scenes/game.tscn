@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://x3dge4fgdhjb"]
+[gd_scene load_steps=6 format=4 uid="uid://x3dge4fgdhjb"]
 
 [ext_resource type="PackedScene" uid="uid://d1pkqrigf6r0" path="res://scenes/player.tscn" id="1_y4ubk"]
 [ext_resource type="Texture2D" uid="uid://bj6y5w1mdkto1" path="res://assets/sprites/Tileset.png" id="2_gd0iv"]
+[ext_resource type="PackedScene" path="res://scenes/estrela.tscn" id="2_pqcd5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc0m4"]
 texture = ExtResource("2_gd0iv")
@@ -157,9 +158,3 @@ tile_set = SubResource("TileSet_fan5a")
 [node name="estrela" parent="." instance=ExtResource("2_pqcd5")]
 position = Vector2(-322, -88)
 scale = Vector2(1.675, 1.675)
-
-[node name="GrowingPlatform" parent="." instance=ExtResource("3_uk8xj")]
-position = Vector2(156, 245)
-scale = Vector2(2, 2)
-
-[editable path="GrowingPlatform"]
