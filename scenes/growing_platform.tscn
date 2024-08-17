@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://5wqnqkpue65s"]
+
+[ext_resource type="Texture2D" uid="uid://dj8sk8tk2gcux" path="res://assets/sprites/growingPlatform.png" id="1_1uo5u"]
+[ext_resource type="Script" path="res://scripts/growing_platform.gd" id="1_o5h3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avq2l"]
+size = Vector2(61, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwydd"]
+size = Vector2(146, 115)
+
+[node name="GrowingPlatform" type="Node2D"]
+position = Vector2(-2, -1)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_o5h3e")
+
+[node name="SmallCollisionAreaShape" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(2, 3)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_avq2l")
+
+[node name="BigCollisionAreaShape" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(5, -36.5)
+shape = SubResource("RectangleShape2D_vwydd")
+disabled = true
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="SmallCollisionShape" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(2, 3)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_avq2l")
+
+[node name="SmallPlatform" type="Sprite2D" parent="AnimatableBody2D/SmallCollisionShape"]
+position = Vector2(-2, -3)
+scale = Vector2(0.205263, 0.295685)
+texture = ExtResource("1_1uo5u")
+
+[node name="BigCollisionShape" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(5, -36.5)
+shape = SubResource("RectangleShape2D_vwydd")
+disabled = true
+
+[node name="BigPlatform" type="Sprite2D" parent="AnimatableBody2D/BigCollisionShape"]
+visible = false
+position = Vector2(-4, -9.5)
+scale = Vector2(0.490796, 0.760436)
+texture = ExtResource("1_1uo5u")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
