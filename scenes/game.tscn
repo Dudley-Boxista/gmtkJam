@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bj6y5w1mdkto1" path="res://assets/sprites/Tileset.png" id="2_gd0iv"]
 [ext_resource type="PackedScene" uid="uid://dv0wlko4t14cr" path="res://scenes/estrela.tscn" id="2_pqcd5"]
 [ext_resource type="PackedScene" uid="uid://5wqnqkpue65s" path="res://scenes/growing_platform.tscn" id="4_doayt"]
+[ext_resource type="PackedScene" uid="uid://dfn523t0e8a72" path="res://scenes/killzone.tscn" id="4_pbsrb"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc0m4"]
 texture = ExtResource("2_gd0iv")
@@ -138,6 +140,8 @@ physics_layer_1/collision_layer = 5
 physics_layer_1/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_sc0m4")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27l82"]
+
 [node name="Game" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_y4ubk")]
@@ -162,3 +166,9 @@ scale = Vector2(1.675, 1.675)
 
 [node name="GrowingPlatform" parent="." instance=ExtResource("4_doayt")]
 position = Vector2(149, 89)
+[node name="Killzone" parent="." instance=ExtResource("4_pbsrb")]
+position = Vector2(-170, 419)
+scale = Vector2(1.675, 1.675)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_27l82")
