@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://x3dge4fgdhjb"]
+[gd_scene load_steps=6 format=4 uid="uid://x3dge4fgdhjb"]
 
 [ext_resource type="PackedScene" uid="uid://d1pkqrigf6r0" path="res://scenes/player.tscn" id="1_y4ubk"]
 [ext_resource type="Texture2D" uid="uid://bj6y5w1mdkto1" path="res://assets/sprites/Tileset.png" id="2_gd0iv"]
+[ext_resource type="Texture2D" uid="uid://187p160x682y" path="res://assets/sprites/png-clipart-pixelated-yellow-star-minecraft-super-mario-bros-pixel-art-pixel-art-text-super-mario-bros-thumbnail.png" id="2_jy0ac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc0m4"]
 texture = ExtResource("2_gd0iv")
@@ -141,6 +142,11 @@ scale = Vector2(1.675, 1.675)
 position = Vector2(-5, -5)
 limit_bottom = 400
 limit_smoothed = true
+
+[node name="Png-clipart-pixelated-yellow-star-minecraft-super-mario-bros-pixel-art-pixel-art-text-super-mario-bros-thumbnail" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(674.627, -4.17909)
+scale = Vector2(0.149, 0.156)
+texture = ExtResource("2_jy0ac")
 
 [node name="TileSet" type="TileMapLayer" parent="."]
 use_parent_material = true
