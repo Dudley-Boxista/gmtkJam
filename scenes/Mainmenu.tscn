@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/botoes-pause-menu.gd" id="1_n0gj0"]
 
 [node name="Mainmenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,9 +24,13 @@ layout_mode = 2
 layout_mode = 2
 text = "RESUME"
 
+[node name="Return to Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "QUIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Return to Main Menu" to="." method="_on_return_to_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

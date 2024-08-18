@@ -1,12 +1,31 @@
 [gd_scene load_steps=11 format=4 uid="uid://x3dge4fgdhjb"]
 
-[ext_resource type="Script" path="res://scripts/pause-main.gd" id="1_taf1i"]
 [ext_resource type="PackedScene" uid="uid://d1pkqrigf6r0" path="res://scenes/player.tscn" id="1_y4ubk"]
 [ext_resource type="Texture2D" uid="uid://bj6y5w1mdkto1" path="res://assets/sprites/Tileset.png" id="2_gd0iv"]
 [ext_resource type="PackedScene" uid="uid://bug2pmnnqij2h" path="res://scenes/estrela.tscn" id="2_pqcd5"]
 [ext_resource type="PackedScene" uid="uid://bnkuetc4ud56w" path="res://scenes/Mainmenu.tscn" id="3_e1qli"]
 [ext_resource type="PackedScene" uid="uid://5wqnqkpue65s" path="res://scenes/growing_platform.tscn" id="4_doayt"]
 [ext_resource type="PackedScene" uid="uid://7dpeg5rgymb" path="res://scenes/killzone.tscn" id="4_pbsrb"]
+
+[sub_resource type="GDScript" id="GDScript_ylk7s"]
+script/source = "extends Node2D
+@onready var pause_menu = $CharacterBody2D/Camera2D/Mainmenu
+var paused = false
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"pause\"):
+		pauseMenu()
+	
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	paused = !paused 
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc0m4"]
 texture = ExtResource("2_gd0iv")
@@ -144,7 +163,7 @@ sources/0 = SubResource("TileSetAtlasSource_sc0m4")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27l82"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_taf1i")
+script = SubResource("GDScript_ylk7s")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_y4ubk")]
 position = Vector2(-513, -78)
