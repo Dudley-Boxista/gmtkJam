@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://3onctn2rxs6r"]
+[gd_scene load_steps=2 format=3 uid="uid://3onctn2rxs6r"]
+
+[ext_resource type="Script" path="res://scenes/menu_incial.gd" id="1_tf6j7"]
 
 [node name="Menu incial" type="Node2D"]
+script = ExtResource("1_tf6j7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1285.0
@@ -31,3 +34,6 @@ text = "Start Game"
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
