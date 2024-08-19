@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://3onctn2rxs6r"]
+
+[ext_resource type="Script" path="res://scenes/menu_incial.gd" id="1_tf6j7"]
+
+[node name="Menu incial" type="Node2D"]
+script = ExtResource("1_tf6j7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1285.0
+offset_bottom = 713.0
+color = Color(0, 0.588388, 0.588426, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 229.0
+offset_right = 989.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 70
+text = "Joguinho sem nome"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 497.0
+offset_top = 430.0
+offset_right = 593.0
+offset_bottom = 496.0
+scale = Vector2(3.10457, 2.83217)
+size_flags_horizontal = 6
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
