@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5wqnqkpue65s"]
+[gd_scene load_steps=5 format=3 uid="uid://bibluj4nurvg4"]
 
 [ext_resource type="Texture2D" uid="uid://dj8sk8tk2gcux" path="res://assets/sprites/growingPlatform.png" id="1_1uo5u"]
 [ext_resource type="Script" path="res://scripts/growing_platform.gd" id="1_o5h3e"]
