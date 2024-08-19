@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d1pkqrigf6r0" path="res://scenes/player.tscn" id="1_y4ubk"]
 [ext_resource type="Texture2D" uid="uid://bj6y5w1mdkto1" path="res://assets/sprites/Tileset.png" id="2_gd0iv"]
 [ext_resource type="PackedScene" uid="uid://bug2pmnnqij2h" path="res://scenes/estrela.tscn" id="2_pqcd5"]
-[ext_resource type="PackedScene" uid="uid://bnkuetc4ud56w" path="res://scenes/Mainmenu.tscn" id="3_e1qli"]
-[ext_resource type="PackedScene" uid="uid://5wqnqkpue65s" path="res://scenes/growing_platform.tscn" id="4_doayt"]
+[ext_resource type="PackedScene" path="res://scenes/Mainmenu.tscn" id="3_e1qli"]
+[ext_resource type="PackedScene" uid="uid://bibluj4nurvg4" path="res://scenes/growing_platform.tscn" id="4_doayt"]
 [ext_resource type="PackedScene" uid="uid://7dpeg5rgymb" path="res://scenes/killzone.tscn" id="4_pbsrb"]
 
 [sub_resource type="GDScript" id="GDScript_ylk7s"]

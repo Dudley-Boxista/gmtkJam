@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://deo8q6pdepcic"]
+
+[ext_resource type="Script" path="res://scripts/growing_platform.gd" id="1_01v8j"]
+[ext_resource type="Script" path="res://scripts/stone.gd" id="1_dmed7"]
+[ext_resource type="Texture2D" uid="uid://cr2vmsm2nc3sm" path="res://assets/sprites/stone.png" id="2_378e0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_188ce"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jps3c"]
+radius = 83.3847
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0js4r"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l72hs"]
+radius = 82.0061
+
+[node name="GrowingStone" type="Node2D"]
+position = Vector2(262, 252)
+script = ExtResource("1_dmed7")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_01v8j")
+
+[node name="SmallCollisionAreaShape" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(4, -40)
+shape = SubResource("CircleShape2D_188ce")
+
+[node name="BigCollisionAreaShape" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(11, -96)
+shape = SubResource("CircleShape2D_jps3c")
+disabled = true
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(1, -7)
+collision_mask = 3
+
+[node name="SmallCollisionShape" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -31)
+shape = SubResource("CircleShape2D_0js4r")
+
+[node name="SmallStone" type="Sprite2D" parent="AnimatableBody2D/SmallCollisionShape"]
+position = Vector2(-2, -3)
+scale = Vector2(0.205, 0.2)
+texture = ExtResource("2_378e0")
+
+[node name="BigCollisionShape" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(10, -86)
+shape = SubResource("CircleShape2D_l72hs")
+disabled = true
+
+[node name="BigStone" type="Sprite2D" parent="AnimatableBody2D/BigCollisionShape"]
+visible = false
+position = Vector2(-12, -19)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_378e0")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
